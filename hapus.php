@@ -1,12 +1,12 @@
 <?php
+$id = $_GET["id_barang"];
 
 function hapus($id) {
     global $connection;
-    mysqli_query($connection, "DELETE FROM barang WHERE id = $id");
+    mysqli_query($connection, "DELETE FROM barang WHERE id_barang = $id");
     return mysqli_affected_rows($connection);
 }
 
-$id = $_GET["id"];
 
 
 if( hapus($id) > 0 ) {
